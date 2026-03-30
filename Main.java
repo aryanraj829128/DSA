@@ -1,70 +1,26 @@
-package Sorting;
-import java.util.Arrays;
+package STRINGS;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr = {5, 3, 4, 1, 2};
-        insertion(arr);
-        System.out.println(Arrays.toString(arr));
-    }
+        int[] roll={1,2,3,4,5};
+        int[] ros; //declaration of ros. ros is getting defined in stack
+        ros=new int[5]; //actual memory creation(heap memeory)
 
-    static void insertion(int[] arr) {
-        for (int i = 0; i < arr.length - 1; i++) {
-            for (int j = i+1; j > 0; j--) {
-                if (arr[j] < arr[j-1]) {
-                    swap(arr, j, j-1);
-                } else {
-                    break;
-                }
-            }
-        }
-    }
+        String[] arr=new String[4];
+        System.out.println(arr[0]);
 
-    static void selection(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            // find the max item in the remaining array and swap with correct index
-            int last = arr.length - i - 1;
-            int maxIndex = getMaxIndex(arr, 0, last);
-            swap(arr, maxIndex, last);
-        }
-    }
+        //comparison
+        String a="Aryan";
+        String b= "Aryan";
+        //==
+        System.out.println(a==b);//true == checks if reference variable is pointing to same object
+        String c= new String("Aryan");
+        String d= new String("Aryan");
+        System.out.println(c==d);//false because both are new object although values are same
+        //when you only need to check values use .equal() method
+        System.out.println(c.equals(d));//true
+        System.out.println(c.charAt(2));
 
-    static void swap(int[] arr, int first, int second) {
-        int temp = arr[first];
-        arr[first] = arr[second];
-        arr[second] = temp;
-    }
 
-    static int getMaxIndex(int[] arr, int start, int end) {
-        int max = start;
-        for (int i = start; i <= end; i++) {
-            if (arr[max] < arr[i]) {
-                max = i;
-            }
-        }
-        return max;
-    }
-
-    static void bubble(int[] arr) {
-        boolean swapped;
-        // run the steps n-1 times
-        for (int i = 0; i < arr.length; i++) {
-            swapped = false;
-            // for each step, max item will come at the last respective index
-            for (int j = 1; j < arr.length - i; j++) {
-                // swap if the item is smaller than the previous item
-                if (arr[j] < arr[j-1]) {
-                    // swap
-                    int temp = arr[j];
-                    arr[j] = arr[j-1];
-                    arr[j-1] = temp;
-                    swapped = true;
-                }
-            }
-            // if you did not swap for a particular value of i, it means the array is sorted hence stop the program
-            if (!swapped) { // !false = true
-                break;
-            }
-        }
     }
 }
