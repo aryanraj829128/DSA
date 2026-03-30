@@ -1,19 +1,17 @@
-package oodp3.polymorphism;
+package oodp4;
 
 public class Main {
     public static void main(String[] args) {
-        Shapes shape= new Shapes();
-        Circle circle= new Circle();
-        Square square= new Square();
-        Shapes square1= new Square();
+        A obj = new A(10, "Kunal");
+        // need to do a few things
+        // 1. access the data members
+        // 2. modify the data members
 
+//        ArrayList<Integer> list = new ArrayList<>(23);
+//        list.DEFAULT_CAPACITY; can't do because it is privatein object class
 
-        shape.area();
-        circle.area();
-        square.area();
-        square1.area(); //op as area is square of side lakin humne pahale pdha tha ke left wala decide krega
-        //ke kya accees hoga lakin esme right wala print kr raha hai kyu
-        //because object is of circle it will call circle one and which method will be called will depend on child
-        //this is known as upcasting
+        obj.getNum();
+        int n = obj.num;
+        System.out.println(n);
     }
 }
