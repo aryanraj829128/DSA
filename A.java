@@ -1,12 +1,15 @@
-package oodp5.extenddemo2;
+package oodp5.Nested;
 
-public interface A {
-    default void fun(){
-        System.out.println("I am in A");
+public class A {
+    //nested interface
+    public interface NestedInterface {
+        boolean isOdd(int num);
     }
-    // static interface methods should always have a body. (wrong)static void greeting();(wrong)static void greeting(){}
-    // call via the interface name
-    static void greeting(){
-        System.out.println("Hey i am static medhod");
+}
+
+class B implements A.NestedInterface {
+    @Override
+    public boolean isOdd(int num) {
+        return (num & 1) == 1;
     }
 }
