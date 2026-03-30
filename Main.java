@@ -1,17 +1,30 @@
-package oodp4;
+package oodp5;
 
 public class Main {
     public static void main(String[] args) {
-        A obj = new A(10, "Kunal");
-        // need to do a few things
-        // 1. access the data members
-        // 2. modify the data members
+        Son son= new Son(30);
+        son.career();
 
-//        ArrayList<Integer> list = new ArrayList<>(23);
-//        list.DEFAULT_CAPACITY; can't do because it is privatein object class
+        son.normal();
 
-        obj.getNum();
-        int n = obj.num;
-        System.out.println(n);
+        Daughter daughter=  new Daughter(34);
+        daughter.career();
+
+//        The constructor Son(int age) is called with age = 30.
+//
+//        Inside the Son constructor, it calls super(age);, which means:
+//
+//        The constructor of the Parent class is called with the same age (30).
+//
+//        In Parent, this line runs: this.age = age;
+//
+//        This sets the age field of the Parent part of the Son object to 30.
+//
+//        After that, the System.out.println(age); prints 30.
+
+        //Parent parent= new Parent(); you can not create object of a abstract class
+        Parent.hello();
+
+
     }
 }
